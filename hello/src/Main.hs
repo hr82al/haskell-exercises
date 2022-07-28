@@ -1,5 +1,13 @@
 module Main where
 
+import Dogy (sayDogy)
+import Hello
+import System.IO
+
 main :: IO ()
 main = do
-  putStrLn "hello world"
+  hSetBuffering stdout NoBuffering
+  putStr "Enter the name: "
+  name <- getLine
+  sayHello name
+  sayDogy
